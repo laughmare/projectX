@@ -21,7 +21,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 class PhoneBookTests {
 
     private PhoneBookOperations phoneBookOperations;
-    private PhoneBookHelper phoneBookHelper = Mockito.mock(PhoneBookHelper.class);;
+    private PhoneBookHelper phoneBookHelper = Mockito.mock(PhoneBookHelper.class);
 
     @BeforeEach
     void initPhoneBookService() {
