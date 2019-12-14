@@ -15,11 +15,12 @@ public class BaseOperations {
 
     private static final String SUCCESS_STATUS = "success";
     private static final String ERROR_STATUS = "error";
-    
-    public BaseResponse doOperation(Object callType, Object... args){
+
+    public BaseResponse doOperation(Object callType, Object... args) {
         BaseResponse response = new BaseResponse();
         return response;
     }
+
     protected BaseResponse handleResponseError(String errorMsg) {
         BaseResponse response = new BaseResponse();
         response.setStatus(ERROR_STATUS);
