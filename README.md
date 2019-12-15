@@ -1,12 +1,19 @@
 # projectX
 
 Kullanılan Teknolojiler :
+
  -Java 1.8
+ 
  -Spring Framework 5.2.2
+ 
  -Hibernate 4.3.1
+ 
  -MySql
+ 
  -Apache Tomcat 8.5.37
+ 
  -Apache Maven 3.6.0
+
 
 Kurulum :
  -db.sql dosyası herhangi bir veri tabanı sisteminde çalıştırılarak tablolar oluşturulabilir.
