@@ -1,6 +1,6 @@
 # projectX
 
-#1 - Kullanılan Teknolojiler :
+# 1 - Kullanılan Teknolojiler :
 
  -Java 1.8
  
@@ -14,7 +14,7 @@
  
  -Apache Maven 3.6.0
 
-#2 - Kurulum :
+# 2 - Kurulum :
 
  -db.sql dosyası herhangi bir veri tabanı sisteminde çalıştırılarak tablolar oluşturulabilir.
  
@@ -23,7 +23,7 @@
  -Proje derlendikten sonra istenilen bir sunucuya yüklendiğinde çalışır hale gelecektir.
 
  
- #3 - Kullanımı :
+ # 3 - Kullanımı :
  
   -Bu projede 4 adet servis bulunmaktadır;
   
@@ -51,7 +51,7 @@
     
     - Number tablosuna yeni bir kayıt atar. "personId" parametresi Person tablosunda bir kayıda denk düşmelidir.
     
-   #4 - Curl ile yapılabilecek örnekler : 
+   # 4 - Curl ile yapılabilecek örnekler : 
     
     - curl http://"serverIp":"serverPort"/web/PhoneBook/getPeople
     
