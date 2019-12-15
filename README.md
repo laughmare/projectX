@@ -1,2 +1,35 @@
 # projectX
- Phone Book Demo Project-Spring + Hibernate
+
+Kullanılan Teknolojiler :
+ -Java 1.8
+ -Spring Framework 5.2.2
+ -Hibernate 4.3.1
+ -MySql
+ -Apache Tomcat 8.5.37
+ -Apache Maven 3.6.0
+
+Kurulum :
+ -db.sql dosyası herhangi bir veri tabanı sisteminde çalıştırılarak tablolar oluşturulabilir.
+ -/src/main/resources/hibernate.cfg.xml dosyası veri tabanına göre modifiye edilmelidir.
+ -Proje derlendikten sonra istenilen bir sunucuya yüklendiğinde çalışır hale gelecektir.
+ 
+ Kullanımı :
+  -Bu projede 4 adet servis bulunmaktadır;
+   1 - /web/PhoneBook/getNumbers :
+    -Parametre almadan çalışır.
+    -Number tablosundaki kayıtları JSON formatında döner.
+   2 - /web/PhoneBook/getPeople :
+    -Parametre almadan çalışır.
+    -Person tablosundaki kayıtları ve her kayıt için Number tablosundaki foreign key bağlantısına sahip olan kayıtları JSON formatında döner.
+   3 - web/PhoneBook/addPerson?name=:name
+    - "name" parametresini alır.
+    - Person tablosuna yeni bir kayıt atar
+   4 - web/PhoneBook/addNumber?personId=:personId&number=:number
+    - "personId" ve "number" parametrelerini alır.
+    - Number tablosuna yeni bir kayıt atar. "personId" parametresi Person tablosunda bir kayıda denk düşmelidir.
+    
+    Curl ile yapılabilecek örnekler : 
+    - curl http://"serverIp":"serverPort"/web/PhoneBook/getPeople
+    - curl http://"serverIp":"serverPort"/web/PhoneBook/getNumbers 
+    - curl http://"serverIp":"serverPort"/web/PhoneBook/addPerson?name=test
+    - curl http://"serverIp":"serverPort"/web/PhoneBook/addNumber?personId=1&number=8378
