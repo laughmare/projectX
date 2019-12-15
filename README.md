@@ -31,5 +31,5 @@ Kurulum :
     Curl ile yapılabilecek örnekler : 
     - curl http://"serverIp":"serverPort"/web/PhoneBook/getPeople
     - curl http://"serverIp":"serverPort"/web/PhoneBook/getNumbers 
-    - curl http://"serverIp":"serverPort"/web/PhoneBook/addPerson?name=test
-    - curl http://"serverIp":"serverPort"/web/PhoneBook/addNumber?personId=1&number=8378
+    - curl -X POST "http://"serverIp":"serverPort"/web/PhoneBook/addPerson?name=test"
+    - curl -X POST "http://"serverIp":"serverPort"/web/PhoneBook/addNumber?personId=1&number=8378"
