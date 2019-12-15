@@ -1,6 +1,6 @@
 # projectX
 
-Kullanılan Teknolojiler :
+1 - Kullanılan Teknolojiler :
 
  -Java 1.8
  
@@ -15,45 +15,46 @@ Kullanılan Teknolojiler :
  -Apache Maven 3.6.0
 ----------------------------------------------------------------------------------------------------------------------------------------
 
-Kurulum :
+2 - Kurulum :
 
  -db.sql dosyası herhangi bir veri tabanı sisteminde çalıştırılarak tablolar oluşturulabilir.
  
  -/src/main/resources/hibernate.cfg.xml dosyası veri tabanına göre modifiye edilmelidir.
  
  -Proje derlendikten sonra istenilen bir sunucuya yüklendiğinde çalışır hale gelecektir.
+ ---------------------------------------------------------------------------------------------------------------------------------------
+
  
- 
- Kullanımı :
+ 3 - Kullanımı :
  
   -Bu projede 4 adet servis bulunmaktadır;
   
-   1 - /web/PhoneBook/getNumbers :
+   3.1 - /web/PhoneBook/getNumbers :
    
     -Parametre almadan çalışır.
     
     -Number tablosundaki kayıtları JSON formatında döner.
     
-   2 - /web/PhoneBook/getPeople :
+   3.2 - /web/PhoneBook/getPeople :
    
     -Parametre almadan çalışır.
     
     -Person tablosundaki kayıtları ve her kayıt için Number tablosundaki foreign key bağlantısına sahip olan kayıtları JSON formatında döner.
     
-   3 - web/PhoneBook/addPerson?name=:name
+   3.3 - web/PhoneBook/addPerson?name=:name
    
     - "name" parametresini alır.
     
     - Person tablosuna yeni bir kayıt atar
     
-   4 - web/PhoneBook/addNumber?personId=:personId&number=:number
+   3.4 - web/PhoneBook/addNumber?personId=:personId&number=:number
    
     - "personId" ve "number" parametrelerini alır.
     
     - Number tablosuna yeni bir kayıt atar. "personId" parametresi Person tablosunda bir kayıda denk düşmelidir.
+----------------------------------------------------------------------------------------------------------------------------------------
     
-    
-    Curl ile yapılabilecek örnekler : 
+   4 - Curl ile yapılabilecek örnekler : 
     
     - curl http://"serverIp":"serverPort"/web/PhoneBook/getPeople
     
