@@ -21,6 +21,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 class PhoneBookTests {
 
     private PhoneBookOperations phoneBookOperations;
+    //PhoneBookHelper classının tüm gereksinimlerinden kurtumak için yapılan atama.
     private PhoneBookHelper phoneBookHelper = Mockito.mock(PhoneBookHelper.class);
 
     @BeforeEach
@@ -28,6 +29,8 @@ class PhoneBookTests {
         phoneBookOperations = new PhoneBookOperations(phoneBookHelper);
     }
 
+    ////////////////////////////////////////////////////////////////////////////
+    //addPerson servisi testleri
     @Test
     void addPersonHasStatusSuccess() throws Exception {
         String name = "testName";
@@ -43,6 +46,8 @@ class PhoneBookTests {
         assertThat(response.getStatus()).isEqualTo("error");
     }
 
+    ////////////////////////////////////////////////////////////////////////////
+    //addNumber servisi testleri
     @Test
     void addNumberHasStatusSuccess() throws Exception {
         String number = "000000";
@@ -50,7 +55,7 @@ class PhoneBookTests {
         BaseResponse response = phoneBookOperations.doOperation(PhoneBookCallType.AddNumber, personId, number);
         assertThat(response.getStatus()).isEqualTo("success");
     }
-
+    
     @Test
     void addNumberWhenThrownExceptionHasStatusError() throws Exception {
         String number = "000000";
@@ -60,6 +65,8 @@ class PhoneBookTests {
         assertThat(response.getStatus()).isEqualTo("error");
     }
 
+    ////////////////////////////////////////////////////////////////////////////
+    //getNumbers servisi testleri
     @Test
     void getNumbersHasStatusSuccess() throws Exception {
         when(phoneBookHelper.getNumbers()).thenReturn(new ArrayList<>());
@@ -74,6 +81,8 @@ class PhoneBookTests {
         assertThat(response.getStatus()).isEqualTo("error");
     }
 
+    ////////////////////////////////////////////////////////////////////////////
+    //getPeople servisi testleri
     @Test
     void getPeopleHasStatusSuccess() throws Exception {
         when(phoneBookHelper.getPeople()).thenReturn(new ArrayList<>());

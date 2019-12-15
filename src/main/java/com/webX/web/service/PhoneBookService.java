@@ -16,10 +16,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class PhoneBookService{
     BaseOperations pbo;
     
+    //Standart constructor
     public PhoneBookService(){
         pbo = new PhoneBookOperations();
     }
     
+    //Operation class'ı inject edilmek istenirse kullanılır
     public PhoneBookService(BaseOperations operations){
         pbo = operations;
     }

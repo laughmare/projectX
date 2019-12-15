@@ -17,17 +17,23 @@ import com.webX.web.service.model.GetPeopleResponse;
  *
  * @author Laughmare
  */
+//Servislerin okunabilirliğini arttıracak ara class. 
+//Her servis çağrısı doOperation methodunu çağıracaktır.
 public class PhoneBookOperations extends BaseOperations{
     private PhoneBookHelper helper;
     
+    //Standart constructor
     public PhoneBookOperations(){
         this.helper = new PhoneBookHelper();
     }
     
+    //Test için mock class injection yaparken kullanılacak constructor
     public PhoneBookOperations(PhoneBookHelper phoneBookHelper){
         this.helper = phoneBookHelper;
     }
     
+    //Her servisin çağıracağı method. 
+    //Her servis için callType tanımlanmalı ve case olarak eklenmelidir.
     @Override
     public BaseResponse doOperation(Object callType, Object... args){
         BaseResponse response = new BaseResponse();

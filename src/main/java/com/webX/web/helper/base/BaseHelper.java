@@ -15,15 +15,19 @@ public class BaseHelper {
     
     Session session;
 
+    //Db'de veri değişikliği yapılacağı zaman çağrılır
     protected void startTx() {
         session.beginTransaction();
     }
 
+    //Db'de veri değişikliği commitlemek için çağrılır. 
+    //Aksi taktirde transaction açık kalır.
     protected void commit() {
         session.getTransaction().commit();
         session.clear();
     }
 
+    //Db'de veri değişikliği yaparken bi hata oluştuğunda çağrılır.
     protected void rollBack() {
         session.getTransaction().rollback();
         session.clear();

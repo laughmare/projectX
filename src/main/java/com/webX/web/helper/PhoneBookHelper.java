@@ -19,24 +19,32 @@ import com.webX.web.util.HibernateUtil;
  */
 public class PhoneBookHelper extends BaseHelper{
 
+    //Standart constructor
     public PhoneBookHelper() {
         setSession(HibernateUtil.getSessionFactory().openSession());
     }
-
+    
+    //Session inject edilmek istenirse kullanılır
     public PhoneBookHelper(Session s) {
         setSession(s);
     }
-
+    
+    //getNumbers servisi için kullanılacak çağrı. 
+    //İşlem sırasında hata çıkarsa exception fırlatır.
     public List getNumbers() throws Exception {
         Query q = getSession().createQuery("from Number number");
         return q.list();
     }
 
+    //getPeople servisi için kullanılacak çağrı. 
+    //İşlem sırasında hata çıkarsa exception fırlatır.
     public List getPeople() throws Exception {
         Query q = getSession().createQuery("from Person as person");
         return q.list();
     }
 
+    //addPerson servisi için kullanılacak çağrı. 
+    //İşlem sırasında hata çıkarsa rollback edilir ve exception fırlatır
     public void addPerson(String name) throws Exception {
         startTx();
         try {
@@ -50,6 +58,8 @@ public class PhoneBookHelper extends BaseHelper{
         commit();
     }
 
+    //addPerson servisi için kullanılacak çağrı. 
+    //İşlem sırasında hata çıkarsa rollback edilir ve exception fırlatır.
     public void addNumber(Integer personId, String number) throws Exception {
         startTx();
         try {

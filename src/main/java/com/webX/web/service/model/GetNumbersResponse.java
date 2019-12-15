@@ -12,6 +12,7 @@ import java.util.List;
  *
  * @author Laughmare
  */
+//getNumbers servisi için dönecek değerleri tutan class
 public class GetNumbersResponse extends BaseResponse {
     List<Number> numberList;
 

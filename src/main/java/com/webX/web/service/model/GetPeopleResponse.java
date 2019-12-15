@@ -13,6 +13,7 @@ import java.util.List;
  *
  * @author Laughmare
  */
+//getPeople servisi için dönecek değerleri tutan class
 public class GetPeopleResponse extends BaseResponse {
     List<Person> personList;
 

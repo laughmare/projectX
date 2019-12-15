@@ -9,6 +9,7 @@ package com.webX.web.service.model.base;
  *
  * @author Laughmare
  */
+//Bütün servislerde kesin dönecek olan değerlerin tutulduğu class
 public class BaseResponse {
 
     private String status;

@@ -9,6 +9,7 @@ package com.webX.web.service.operation.callType;
  *
  * @author Laughmare
  */
+//Çağırılan servisleri operation classlarında ayırt etmek için kullanılır
 public enum PhoneBookCallType {
     GetNumbers, GetPeople, AddNumber, AddPerson;
 }
